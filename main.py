@@ -1,14 +1,13 @@
 import logging
 from aiogram import Bot, Dispatcher, executor, types
-
-API_TOKEN = '5092633868:AAGe8bjrGo1k4X78XOrB-xq9MCl-KiZgFug'
-url = 'https://v6.exchangerate-api.com/v6/a9bacf51ad20839f4bf9adda/latest/USD'
+import settings
+from buttons import *
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
 # Initialize bot and dispatcher
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=settings.TOKEN)
 dp = Dispatcher(bot)  # check bot for new messages and requests and connects with backend
 
 @dp.message_handler(commands=['start', 'help'])
